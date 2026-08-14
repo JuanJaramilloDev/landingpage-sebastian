@@ -1,0 +1,229 @@
+---
+---
+
+<header
+  class="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-black/90 backdrop-blur-md"
+>
+  <nav
+    class="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8"
+  >
+
+    <!-- Logo -->
+    <a
+      href="#inicio"
+      data-scroll="inicio"
+      class="group text-2xl font-bold tracking-wide text-[#D4AF37] transition-all duration-300 hover:text-[#F0D477] sm:text-3xl"
+    >
+      Sebastián Guerra
+    </a>
+
+
+    <!-- Navegación Desktop -->
+    <div class="hidden items-center gap-8 md:flex">
+
+      <button
+        type="button"
+        data-scroll="inicio"
+        class="nav-link text-sm text-white transition-colors hover:text-[#D4AF37]"
+      >
+        Inicio
+      </button>
+
+      <button
+        type="button"
+        data-scroll="sobre-mi"
+        class="nav-link text-sm text-white transition-colors hover:text-[#D4AF37]"
+      >
+        Sobre mí
+      </button>
+
+      <button
+        type="button"
+        data-scroll="experiencia"
+        class="nav-link text-sm text-white transition-colors hover:text-[#D4AF37]"
+      >
+        Experiencia
+      </button>
+
+      <button
+        type="button"
+        data-scroll="proyectos"
+        class="nav-link text-sm text-white transition-colors hover:text-[#D4AF37]"
+      >
+        Especialidades
+      </button>
+
+      <button
+        type="button"
+        data-scroll="contacto"
+        class="nav-link text-sm text-white transition-colors hover:text-[#D4AF37]"
+      >
+        Contacto
+      </button>
+
+    </div>
+
+
+    <!-- Acciones -->
+    <div class="flex items-center gap-3">
+
+      <!-- CV Desktop -->
+      <a
+        href="/HV.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hidden rounded border border-[#D4AF37] px-5 py-2 text-sm font-medium text-[#D4AF37] transition-all duration-300 hover:bg-[#D4AF37] hover:text-black sm:block"
+      >
+        Ver HV
+      </a>
+
+
+      <!-- Botón menú móvil -->
+      <button
+        id="menu-toggle"
+        type="button"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+        class="flex h-10 w-10 items-center justify-center rounded border border-white/10 text-white transition-all duration-300 hover:border-[#D4AF37] hover:text-[#D4AF37] md:hidden"
+      >
+
+        <svg
+          id="menu-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+        >
+          <line x1="4" y1="6" x2="20" y2="6"></line>
+          <line x1="4" y1="12" x2="20" y2="12"></line>
+          <line x1="4" y1="18" x2="20" y2="18"></line>
+        </svg>
+
+      </button>
+
+    </div>
+
+  </nav>
+
+
+  <!-- Menú móvil -->
+  <div
+    id="mobile-menu"
+    class="hidden border-t border-white/10 bg-black/95 px-6 py-6 backdrop-blur-md md:hidden"
+  >
+
+    <div class="flex flex-col gap-2">
+
+      <button
+        type="button"
+        data-scroll="inicio"
+        class="mobile-nav-link rounded px-4 py-3 text-left text-sm text-white/70 transition-all duration-300 hover:bg-white/5 hover:text-[#D4AF37]"
+      >
+        Inicio
+      </button>
+
+      <button
+        type="button"
+        data-scroll="sobre-mi"
+        class="mobile-nav-link rounded px-4 py-3 text-left text-sm text-white/70 transition-all duration-300 hover:bg-white/5 hover:text-[#D4AF37]"
+      >
+        Sobre mí
+      </button>
+
+      <button
+        type="button"
+        data-scroll="experiencia"
+        class="mobile-nav-link rounded px-4 py-3 text-left text-sm text-white/70 transition-all duration-300 hover:bg-white/5 hover:text-[#D4AF37]"
+      >
+        Experiencia
+      </button>
+
+      <button
+        type="button"
+        data-scroll="proyectos"
+        class="mobile-nav-link rounded px-4 py-3 text-left text-sm text-white/70 transition-all duration-300 hover:bg-white/5 hover:text-[#D4AF37]"
+      >
+        Especialidades
+      </button>
+
+      <button
+        type="button"
+        data-scroll="contacto"
+        class="mobile-nav-link rounded px-4 py-3 text-left text-sm text-white/70 transition-all duration-300 hover:bg-white/5 hover:text-[#D4AF37]"
+      >
+        Contacto
+      </button>
+
+
+      <!-- HV móvil -->
+      <a
+        href="/HV-Sebastian-Guerra.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-3 rounded border border-[#D4AF37]/50 px-4 py-3 text-center text-sm font-medium text-[#D4AF37] transition-all duration-300 hover:bg-[#D4AF37] hover:text-black"
+      >
+        Ver Hoja de Vida
+      </a>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<script>
+  const toggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+  const icon = document.getElementById("menu-icon");
+
+  if (toggle && menu && icon) {
+
+    toggle.addEventListener("click", () => {
+
+      const isOpen = !menu.classList.contains("hidden");
+
+      menu.classList.toggle("hidden");
+
+      toggle.setAttribute("aria-expanded", String(!isOpen));
+
+      if (!isOpen) {
+        icon.innerHTML = `
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+        `;
+      } else {
+        icon.innerHTML = `
+          <line x1="4" y1="6" x2="20" y2="6"></line>
+          <line x1="4" y1="12" x2="20" y2="12"></line>
+          <line x1="4" y1="18" x2="20" y2="18"></line>
+        `;
+      }
+
+    });
+
+
+    document.querySelectorAll(".mobile-nav-link").forEach((link) => {
+
+      link.addEventListener("click", () => {
+
+        menu.classList.add("hidden");
+
+        toggle.setAttribute("aria-expanded", "false");
+
+        icon.innerHTML = `
+          <line x1="4" y1="6" x2="20" y2="6"></line>
+          <line x1="4" y1="12" x2="20" y2="12"></line>
+          <line x1="4" y1="18" x2="20" y2="18"></line>
+        `;
+
+      });
+
+    });
+
+  }
+</script>

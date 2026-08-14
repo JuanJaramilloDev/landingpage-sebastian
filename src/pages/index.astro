@@ -1,11 +1,62 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import "../styles/global.css";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import PresentationCard from "../components/PresentationCard.astro";
+import About from "../components/About.astro";
+import Experience from "../components/Experience.astro";
+import Projects from "../components/Projects.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Sebastián Guerra | Ingeniero Biomédico</title>
+
+    <meta
+      name="description"
+      content="Sebastián Guerra — Ingeniero Biomédico, innovación, tecnología y desarrollo de sistemas biomédicos."
+    />
+  </head>
+
+  <body class="bg-black text-white">
+
+    <Navbar />
+
+    <main>
+      <Hero />
+	  <PresentationCard />
+      <About />
+      <Experience />
+	  <Projects />
+	  <Contact />
+    </main>
+
+	<Footer />
+
+<script>
+  document.querySelectorAll<HTMLElement>("[data-scroll]").forEach((element) => {
+    element.addEventListener("click", () => {
+      const targetId = element.dataset.scroll;
+
+      if (!targetId) return;
+
+      const target = document.getElementById(targetId);
+
+      if (!target) return;
+
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    });
+  });
+</script>
+
+  </body>
+</html>
