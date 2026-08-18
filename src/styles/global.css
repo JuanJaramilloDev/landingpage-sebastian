@@ -34,3 +34,17 @@ body {
 [data-reveal-delay="3"] {
   transition-delay: 0.45s;
 }
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 12px));
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
