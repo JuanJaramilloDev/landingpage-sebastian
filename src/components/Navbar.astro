@@ -2,7 +2,8 @@
 ---
 
 <header
-  class="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-black/90 backdrop-blur-md"
+  id="site-header"
+  class="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-black/90 backdrop-blur-md transition-shadow duration-300"
 >
   <nav
     class="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8"
@@ -227,6 +228,27 @@
 
 
 <script>
+  const header = document.getElementById("site-header");
+
+  if (header) {
+
+    const updateHeaderShadow = () => {
+
+      if (window.scrollY > 10) {
+        header.classList.add("shadow-lg", "shadow-black/40", "border-white/15");
+      } else {
+        header.classList.remove("shadow-lg", "shadow-black/40", "border-white/15");
+      }
+
+    };
+
+    updateHeaderShadow();
+
+    window.addEventListener("scroll", updateHeaderShadow, { passive: true });
+
+  }
+
+
   const toggle = document.getElementById("menu-toggle");
   const menu = document.getElementById("mobile-menu");
   const icon = document.getElementById("menu-icon");

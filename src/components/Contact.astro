@@ -3,12 +3,17 @@
 
 <section
   id="contacto"
-  class="border-t border-white/5 bg-[#080808] px-6 py-15 lg:px-8"
+  class="relative overflow-hidden border-t border-white/5 bg-[#080808] px-6 py-15 lg:px-8"
 >
-  <div class="mx-auto max-w-7xl">
+
+  <div
+    class="animate-float-slow pointer-events-none absolute -left-40 bottom-0 h-96 w-96 rounded-full bg-[#D4AF37]/5 blur-3xl"
+  ></div>
+
+  <div class="relative mx-auto max-w-7xl">
 
     <!-- Encabezado -->
-    <div class="max-w-3xl">
+    <div class="max-w-3xl" data-reveal>
 
       <p class="mb-4 text-xs font-medium uppercase tracking-[0.3em] text-[#D4AF37]">
         Contacto
@@ -37,6 +42,7 @@
       <!-- Información -->
       <div
         class="rounded-xl border border-white/10 bg-black p-8 lg:col-span-2"
+        data-reveal="left"
       >
 
         <p class="text-xs uppercase tracking-[0.2em] text-white/40">
@@ -154,6 +160,7 @@
       <!-- Formulario -->
       <div
         class="rounded-xl border border-white/10 bg-black p-8 lg:col-span-3"
+        data-reveal="right"
       >
 
         <div class="mb-8">

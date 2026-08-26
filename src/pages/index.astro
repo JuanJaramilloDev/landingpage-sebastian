@@ -42,22 +42,7 @@ import Servicios from "../components/Servicios.astro";
 	<Footer />
 
 <script>
-  document.querySelectorAll<HTMLElement>("[data-scroll]").forEach((element) => {
-    element.addEventListener("click", () => {
-      const targetId = element.dataset.scroll;
-
-      if (!targetId) return;
-
-      const target = document.getElementById(targetId);
-
-      if (!target) return;
-
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    });
-  });
+  import "../scripts/main.ts";
 </script>
 
   </body>
